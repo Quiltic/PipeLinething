@@ -1,4 +1,4 @@
-name: MSBuild
+name: pull
 
 on:
   # push:
@@ -19,6 +19,15 @@ permissions:
   contents: read
 
 jobs:
+  lint:
+    runs-on: windows-latest
+
+    steps:
+      -name: RunLint
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: echo LINT
+
+
   build:
     runs-on: windows-latest
 
